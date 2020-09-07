@@ -1,0 +1,60 @@
+cachingOrder2(_1880, close(_1880,_1882,24)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, close(_1880,_1882,25)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, close(_1880,_1882,30)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, close(_1880,_1882,34)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, close(_1880,_1882,34)=false) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, closeSymmetric(_1880,_1882,30)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, person(_1880)=true) :-
+     list_of_ids(_1880).
+
+cachingOrder2(_1880, activeOrInactivePerson(_1880)=true) :-
+     list_of_ids(_1880).
+
+cachingOrder2(_1880, greeting1(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, greeting2(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, leaving_object(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, leaving_object(_1880,_1882)=true) :-
+     symmetric_id_pair(_1880,_1882).
+
+cachingOrder2(_1880, meeting(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, moving(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+cachingOrder2(_1880, fighting(_1880,_1882)=true) :-
+     id_pair(_1880,_1882).
+
+buildFromPoints2(_1880, walking(_1880)=true) :-
+     list_of_ids(_1880).
+
+buildFromPoints2(_1880, active(_1880)=true) :-
+     list_of_ids(_1880).
+
+buildFromPoints2(_1880, inactive(_1880)=true) :-
+     list_of_ids(_1880).
+
+buildFromPoints2(_1880, running(_1880)=true) :-
+     list_of_ids(_1880).
+
+buildFromPoints2(_1880, abrupt(_1880)=true) :-
+     list_of_ids(_1880).
+

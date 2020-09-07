@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+
+# see Formalog::Util::Prolog;
+# see Formalog::Multi;
+# see Formalog::Multi::Agent;
+# see Formalog::Multi::Agent::Yaswi;
+
+use Formalog::Multi::Test;
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+$UNIVERSAL::agent = UniLang::Agent::Agent->new
+  (Name => "ELog2-Formalog",
+   ReceiveHandler => \&Receive);
+$UNIVERSAL::agent->DoNotDaemonize(1);
+
+$UNIVERSAL::test = Formalog::Multi::Test->new();
+
+sub Receive {
+  my %args = @_;
+  $UNIVERSAL::test->ProcessMessage
+    (Message => $args{Message});
+}
+
+$UNIVERSAL::test->Execute
+  (
+   AddNewAgentArgs => {
+		       AgentName => 'ELog2-Agent1',
+		       YaswiName => 'ELog2-Yaswi1',
+		       YaswiData => {
+				     Context => 'Org::FRDCSA::ELog2',
+				     FileNameToLoad => '/var/lib/myfrdcsa/codebases/minor/elog2/elog2.pl',
+				     # Before => '',
+				     # During => '',
+				     # After => '',
+				    },
+		      },
+  );

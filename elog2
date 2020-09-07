@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+
+use ELog2;
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+$UNIVERSAL::agent = UniLang::Agent::Agent->new
+  (Name => "ELog2",
+   ReceiveHandler => \&Receive);
+$UNIVERSAL::elog2 = ELog2->new();
+
+sub Receive {
+  my %args = @_;
+  $UNIVERSAL::elog2->ProcessMessage
+    (Message => $args{Message});
+}
+
+$UNIVERSAL::elog2->Execute();
